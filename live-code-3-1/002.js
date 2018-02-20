@@ -33,26 +33,29 @@ ex: Mr. *****, Mrs. *****, Ms. *****, Mr. *****
 function addTitle (people) {
     var hasil = [];
     var title = '';
+    var hasilStr = '';
 
     for(let i = 0; i < people.length; i++){
-        for(let j = 0; j < people[i].length; j++){
-              if(people[i][1] === 'male'){
-                  title = 'Mr.'+' '+people[i][0];
-              }else if (people[i][1] === 'female' && people[i][2] === true) {
-                  title = 'Mrs.'+' '+people[i][0];
-              }else if(people[i][1] === 'female' && people[i][2] === false){
-                  title = 'Ms.'+' '+people[i][0];
-              }
+        if(people[i][1] === 'male'){
+            title = 'Mr.'+' '+people[i][0];
+        }else if (people[i][1] === 'female' && people[i][2] === true) {
+            title = 'Mrs.'+' '+people[i][0];
+        }else if(people[i][1] === 'female' && people[i][2] === false){
+            title = 'Ms.'+' '+people[i][0];
         }
+
         hasil.push(title);
         title = '';
     }
     var length = hasil.length -1;
 
     if(hasil.length === 0){
-        return '';
+        return hasilStr;
     }else{
-        var hasilStr = '';
+        //kalo pake join
+        //hasilStr = hasil.join(',');
+
+        //kalo ga pake join
         for(let i = 0; i < hasil.length; i++){
           if(length === i){
             hasilStr += hasil[i];
@@ -60,8 +63,9 @@ function addTitle (people) {
             hasilStr += hasil[i]+', ';
           }
         }
+        return hasilStr;
     }
-    return hasilStr;
+
 }
 
 console.log(addTitle([['Sergei', 'male', true],
