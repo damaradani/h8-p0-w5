@@ -10,6 +10,17 @@ Gunakan regex untuk melatih kemampuan regex.
 function cariPelaku(str) {
   var pelaku = str.match(/abc/g);
   return pelaku.length;
+
+  /*Tanpa Regex
+  var count = 0;
+
+  for(let i = 0;  i < str.length; i++){
+      if(str.substring(i,i+3) === 'abc'){
+          count += 1;
+      }
+  }
+  return count;
+  */
 }
 
 /*function cariPelaku(str) {
