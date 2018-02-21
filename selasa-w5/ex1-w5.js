@@ -24,7 +24,7 @@ jika yang diberikan adalah array kosong maka kembalikan nilai 'No number'
 function deepSum (arr) {
   let hasilSum = 0;
   if(arr === undefined || arr.length === 0){
-      return arr;
+      return 'No number';
   }else {
     for(let i = 0; i < arr.length; i++){
         //console.log(arr[i]);
